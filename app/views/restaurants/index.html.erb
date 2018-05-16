@@ -1,0 +1,20 @@
+<div class="restaurant-container">
+
+  <% @restaurants.each do |restaurant| %>
+
+      <% rating = [0, 1, 2, 3, 4, 5].sample() %>
+        <div class="restaurant-card">
+          <%= link_to restaurant_path(restaurant.id) do %>
+          <div class="restaurant-card-content">
+            <h2><%= restaurant.name %></h2>
+            <p><%= restaurant.address %></p>
+            <span>
+              <%= '★' * rating %>
+              <%= '☆' * (5 - rating) %>
+            </span>
+          </div>
+        <% end %>
+      </div>
+  <% end %>
+</div>
+

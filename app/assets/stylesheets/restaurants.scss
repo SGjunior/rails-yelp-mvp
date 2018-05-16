@@ -1,0 +1,75 @@
+// Place all the styles related to the restaurants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.restaurant-container {
+  width: 50%;
+  margin: 30px auto;
+
+}
+
+.restaurant-card {
+  border-left:10px solid #dfdfdf;
+  background-color: #fdfdfd;
+  margin: 10px auto;
+
+  a {
+    text-decoration: none !important;
+  }
+}
+
+.restaurant-card:hover {
+  opacity: 0.8;
+}
+
+.restaurant-card-content {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+
+  h2 {
+    color: #7f7f7f;
+  }
+
+  p {
+    color: #b2b2b2;
+  }
+  span {
+    color: #999999;
+  }
+
+}
+
+.float-right {
+  float: right !important;
+}
+
+.float-left {
+  float: left !important;
+}
+
+.restaurant-container form .form-group select {
+  @extend .form-control;
+  option {
+    margin-left: 10px;
+  }
+}
+
+.alert-control-container {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.alert-control-content {
+  overflow: hidden;
+  p {
+      text-align: center;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      font-size: 12px;
+
+
+  }
+}

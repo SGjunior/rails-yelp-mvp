@@ -1,0 +1,33 @@
+<div class="restaurant-container">
+
+  <% rating = [0, 1, 2, 3, 4, 5].sample() %>
+    <div class="restaurant-card">
+      <%= link_to restaurant_path(@restaurant.id) do %>
+      <div class="restaurant-card-content">
+        <h2><%= @restaurant.name %></h2>
+        <p><%= @restaurant.address %></p>
+        <span>
+          <%= '★' * rating %><%= '☆' * (5 - rating) %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+
+<hr>
+
+  <div class="restaurant-card">
+    <!-- <div class="restaurant-card-content"> -->
+
+      <!-- <div class="btn btn-warning">Add review</div> -->
+      <%= link_to 'Add review', new_restaurant_review_path(@restaurant.id), { class: 'btn btn-warning' } %>
+      <%= link_to 'back', restaurants_path, { class: 'btn btn-primary float-right'}  %>
+
+    <!-- </div> -->
+  </div>
+
+
+  <%= render 'reviews' %>
+
+
+
+</div>

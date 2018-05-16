@@ -1,0 +1,26 @@
+<div class="restaurant-container">
+  <%= form_for [@restaurant, @review] do |f| %>
+      <div class="form-group">
+        <%= f.label :content, class: 'form-label' %>
+        <%= f.text_area :content, class: 'form-control', autofocus: 'autofocus' %>
+        <% if @review.errors.messages[:content].any? %>
+          <div class="alert-control-container">
+            <div class="alert-control-content">
+              <p class="text-danger bg-danger">
+                <i>- <%= @review.errors.messages[:content][0] %></i>
+              </p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="form-group">
+        <%= f.label :rating, class: 'form-label' %>
+        <%= f.select :rating, options_for_select([["0", 0],["1", 1], ["2", 2], ['3', 3], ['4', 4], ['5', 5]]) %>
+      </div>
+      <div class="form-group">
+        <%= f.submit 'submit', class: 'form-control btn btn-primary' %>
+      </div>
+
+    <% end %>
+
+</div>

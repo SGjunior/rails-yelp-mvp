@@ -1,0 +1,13 @@
+<hr>
+<h4>REVIEWS</h4>
+  <% @restaurant.reviews.each do |review| %>
+
+  <div class="restaurant-card">
+    <div class="restaurant-card-content">
+      <p><%= review.content %></p>
+      <span>
+        <%= '★' * review.rating %><%= '☆' * (5 - review.rating) %>
+      </span>
+    </div>
+  </div>
+  <% end %>
